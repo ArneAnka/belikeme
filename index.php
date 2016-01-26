@@ -83,12 +83,23 @@ class bill{
         $bill->fullPath = $this->getLocation(). "/";
         $bill->name = $this->getName().'.jpg';
     
-        //header("Content-type: image/jpeg");
         $imgPath = 'image.jpg'; //the bill template
         $image = imagecreatefromjpeg($imgPath);
         $color = imagecolorallocate($image, 0, 0, 0);
-        $font = '/Library/Fonts/Arial Black.ttf';
         $fontsize ='30';
+        
+        /* Font mac osx */
+        $font = '/Library/Fonts/Arial Black.ttf';
+        
+        /* Font windows (http://superuser.com/a/407811) */
+        // $font = 'C:\Windows\Fonts';
+        
+        /* Font linux (http://askubuntu.com/a/353310)
+        Standard Locations:
+        /usr/share/fonts
+        /usr/local/share/fonts
+        */
+
 
     
 if(isset($_POST['does_what'])){
